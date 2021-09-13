@@ -1,16 +1,14 @@
-/* une grille avec flex - pisola CBS */
+/* une grille avec flex  et en responsive - pisola CBS */
 
 * {
     box-sizing: border-box;
 }
 
 body {
-    background-color: gold;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 1.1em;
-    color: #333;
-    text-align: justify;
+    background-color: lightyellow;
 }
+
+/* couleurs pour identifier */
 
 .bleu-leger {
     background-color: lightblue;
@@ -24,11 +22,12 @@ body {
     background-color: lightgrey;
 }
 
-.conteneur {
-    width: 100%;
-    background-color: #fff;
+main {
+    width: 1000px;
+    margin: 0 auto;
 }
 
+/* la grille en flex */
 /* la classe pour créer une rangée */
 
 .row {
@@ -38,19 +37,6 @@ body {
     flex-wrap: wrap;
     row-gap:5px;
     margin-bottom: 5px;
-
-    border: 1px solid orange;
-}
-
-/* la classe pour mettre les éléments les uns en dessous des autres */
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.centre {
-    justify-content: center;
 }
 
 /* la grille sur 12 colonnes, et la définition de la largeur des colonnes */
@@ -150,25 +136,89 @@ body {
     margin-left: 91.666666%;
 }
 
-h1 {
-    background: url("../img/dolomites-italie.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
+/* classe pour les images adaptatives */
 
-    height: 250px;
-    line-height: 250px;
-    text-align: center;
-    width: 80%;
+.img-fluide {
+    width: 100%;
 }
 
-.transparent {
-    background-color: #fff;
-    opacity: 0.8;
-    border-radius: 5px;
+/* les règles de médias queries pour le responsive et les différents écrans */
+
+/* pour les téléphones ou les smartphones */
+
+@media (max-width: 320px) {
+
+    .column-xs {
+        display: flex;
+        flex-direction: column;
+    }
+    .col-xs-12 {
+        width: 100%;
+    }
+
+    .column-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     
+    .marge-xs {
+        margin: 0;
+    }
+    body {
+        background-color: #fff;
+    }
+    main {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+/* fin pour les téléphones */
+
+/* pour les petites tablettes et les smartphones grand écrans  */
+
+@media (min-width: 321px) and (max-width: 767px) {
+
+    body {
+        background-color: rgb(248, 190, 200);
+    }
+
+    main {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .column-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
 
-footer {
-    height: 200px;
-    background-color: rgb(95, 94, 94);
+/* pour les tablettes et certains ordinateurs portables */
+
+@media (min-width: 768px) and (max-width: 1096px) {
+
+    body {
+        background-color: rgb(104, 172, 204);
+    }
+
+    main {
+       background-color: #fff;
+    }
+
+    .column-reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+/* pour les ordinateurs de bureau, les écrans plus grands que 1097px */
+
+@media (min-width: 1097px) {
+
+    body {
+        background-color: rgb(161, 228, 27);
+    }
 }
