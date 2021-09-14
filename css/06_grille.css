@@ -1,0 +1,48 @@
+/* style pour la grille 06 */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(241, 241, 169);
+}
+
+
+
+/* couleurs pour identifier */
+
+.bleu {
+    background-color: lightblue;
+}
+
+.vert {
+    background: lightgreen;
+}
+
+.gris {
+    background-color: lightgrey;
+}
+
+section {
+    /* les sections sont display flex */
+    display: flex;
+    /* flex-direction: row; */
+
+    max-width: 1000px;
+    margin: auto;
+    background-color:#fff;
+}
+
+.column {
+    margin: 10px;
+    border: 1px solid #000;
+    /* Comme nous voulons que nos colonnes se comportent de la même façon lorsqu’elles s’agrandissent ou se rapetissent, donnons à nos deux propriétés la valeur 1. */
+    /* flex-grow indique à flexbox la façon dont il doit augmenter la taille de l’item pour occuper plus d’espace si nécessaire. */
+    flex-grow: 1;
+    /* flex-shrink indique à flexbox comment réduire cette taille si nécessaire. */
+    flex-shrink: 1;
+    flex-basis: 0;
+    /* en racourcis */
+    /* flex: 1 1 0; */
+}
