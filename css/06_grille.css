@@ -8,8 +8,6 @@ body {
     background-color: rgb(241, 241, 169);
 }
 
-
-
 /* couleurs pour identifier */
 
 .bleu {
@@ -34,15 +32,29 @@ section {
     background-color:#fff;
 }
 
-.column {
+.colonne {
     margin: 10px;
     border: 1px solid #000;
+    /* 1 flex-grow définit la possibilité d'un item flex à s'aggrandir si c'est nécessaire ; il accepte une valeur qui sert de proportion Il impose quel quantité d'espace disponible à l'intérieur de l'élément flex l'item doit prendre  */
+
+    /* It dictates what amount of the available space inside the flex container the item should take up. */
     /* Comme nous voulons que nos colonnes se comportent de la même façon lorsqu’elles s’agrandissent ou se rapetissent, donnons à nos deux propriétés la valeur 1. */
-    /* flex-grow indique à flexbox la façon dont il doit augmenter la taille de l’item pour occuper plus d’espace si nécessaire. */
+    /* 2 flex-grow indique à flexbox la façon dont il doit augmenter la taille de l’item pour occuper plus d’espace si nécessaire. */
+    /* si tous les éléments ont flex-grow égal à 1 chaque enfant aura une taille égale dans le parent  */
     flex-grow: 1;
     /* flex-shrink indique à flexbox comment réduire cette taille si nécessaire. */
     flex-shrink: 1;
     flex-basis: 0;
     /* en racourcis */
     /* flex: 1 1 0; */
+}
+
+
+section:first-of-type .colonne:first-of-type {
+    /* si un des enfant à une value de 2 cet enfant prendra deux fois la taille des autres */
+    flex-grow: 2;
+    flex-shrink: 2;
+    
+    flex-basis: 0;
+    flex-basis: 22px;
 }
