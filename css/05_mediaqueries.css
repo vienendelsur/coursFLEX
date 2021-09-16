@@ -25,6 +25,7 @@ body {
 main {
     width: 1000px;
     margin: 0 auto;
+    background-color: #fff;
 }
 
 /* la grille en flex */
